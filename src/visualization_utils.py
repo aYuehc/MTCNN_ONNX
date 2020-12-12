@@ -38,8 +38,8 @@ def show_bboxes(img, bounding_boxes, facial_landmarks=[]):
     for p in facial_landmarks:
         for i in range(5):
             draw.ellipse([
-                (p[i] - 1.0, p[i + 5] - 1.0),
-                (p[i] + 1.0, p[i + 5] + 1.0)
-            ], outline='blue')
+                (p[i] - 5.0, p[i + 5] - 5.0),
+                (p[i] + 5.0, p[i + 5] + 5.0)
+            ], fill=(255, 0, 0), outline='red')
 
     return img_copy
