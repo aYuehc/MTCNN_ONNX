@@ -213,12 +213,12 @@ def correct_bboxes(bboxes, width, height):
 
     # if box's bottom right corner is too far right
     ind = np.where(ex > width - 1.0)[0]
-    edx[ind] = w[ind] + width - 2.0 - ex[ind]
+    edx[ind] = width - 1.0 - x[ind]
     ex[ind] = width - 1.0
 
     # if box's bottom right corner is too low
     ind = np.where(ey > height - 1.0)[0]
-    edy[ind] = h[ind] + height - 2.0 - ey[ind]
+    edy[ind] = height - 1.0 - y[ind]
     ey[ind] = height - 1.0
 
     # if box's top left corner is too far left
